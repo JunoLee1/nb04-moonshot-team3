@@ -3,10 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "node scripts/start.js",
+    "dev:next": "next dev --turbopack",
+    "dev:node": "node server.js",
+    "build": "node scripts/build.js",
+    "start": "node scripts/start.js",
+    "lint": "next lint",
+    "seed": "prisma db seed"
   },
   "dependencies": {
     "@types/dotenv": "^6.1.1",
