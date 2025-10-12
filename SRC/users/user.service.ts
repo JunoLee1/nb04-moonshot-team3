@@ -28,4 +28,16 @@ export default class UserService {
         return updatedUser
         
     }
+    async findUserProjects({user_id}:{user_id:number}):Promise<any>{
+        const projects = await prisma.project.findMany({
+            where:{
+            id:user_id
+            },
+            include:{
+            tasks: true,
+            members:true
+            }
+      })
+        return projects 
+    }
 }
